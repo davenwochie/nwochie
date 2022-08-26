@@ -1,0 +1,42 @@
+body{
+    background: rgb(5,36,64);
+}
+.loading{
+    left: 50%;
+    top: 50%;
+    font-style: 36px;
+    font-size: 2vh;
+    font-family: serif;
+    font-weight: bold;
+    letter-spacing: 4.4px;
+    text-transform:capitalize;
+    position: absolute;
+    overflow: hidden;
+    
+    transform: translate(-50, -60);
+
+}
+.loading::before {
+    color: rgb(172,190,200);
+    content: attr(data-loading-text);
+}
+.loading::after{
+    top: 0;
+    left: 0;
+    width: 0;
+    opacity: 1;
+    color: #fff;
+    overflow: hidden;
+    position: absolute;
+    content: attr(data-loading-text);
+    animation: loading 5s infinite;
+}
+@keyframes loading {
+    0%{
+        width: 0;
+    }
+    100% {
+        width: 100%;
+    }
+    
+}
